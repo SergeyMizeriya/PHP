@@ -28,5 +28,6 @@ $sqlInsert_1 = "INSERT INTO tournament (name, star_date) VALUES ('Tournament A',
 $sqlInsert_2 = "INSERT INTO relations (playerID, TournamentID) VALUES ('1', '1'), ('2', '1'), ('1', '2'), ('2', '2'), ('3', '2'), ('3', '3'), ('4', '3'), ('5', '3');";
 //выводим всю таблицу
 $sqlSELECT_3 = "SELECT tournament.name, player.name FROM player, tournament, relations WHERE relations.tournamentID = tournament.ID AND relations.playerID = player.id;";
-
+//запрос с использованием JOIN
+$sqlSELECT_4 = "SELECT tournament.name, player.name FROM relations JOIN player ON relations.playerID = player.id JOIN tournament ON relations.tournamentID = tournament.id;"
 ?>
